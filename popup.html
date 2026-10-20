@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>重复打开时询问</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      width: 320px;
+      padding: 16px 16px 14px;
+      font: 13px/1.5 "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: #1f1f1f;
+      background: #fff;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 15px;
+      font-weight: 650;
+    }
+    p { margin: 0 0 12px; color: #3c4043; }
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+    #status { margin: 0 0 12px; color: #5f6368; }
+    button {
+      width: 100%;
+      height: 34px;
+      border: 0;
+      border-radius: 8px;
+      background: #eef0f3;
+      color: #1f1f1f;
+      font: inherit;
+      cursor: pointer;
+    }
+    button:hover { background: #e4e7eb; }
+    .note {
+      margin: 12px 0 0;
+      color: #5f6368;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>重复打开时询问</h1>
+  <p>同一个地址已经开着时，会在新标签上询问。确认后关掉新标签，回到原来的页面并刷新；取消就保留新标签。</p>
+  <label>
+    <input id="enabled" type="checkbox">
+    开启询问
+  </label>
+  <p id="status"></p>
+  <button id="settings" type="button">打开扩展详情</button>
+  <p class="note">打开本机 HTML（file://）时，需要在扩展详情里打开「允许访问文件网址」。没开的话，检测不到本地文档。</p>
+  <script src="popup.js"></script>
+</body>
+</html>
